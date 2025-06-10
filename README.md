@@ -18,12 +18,14 @@
 ## 入门指南
 
 1. 克隆仓库：
+
    ```bash
    git clone https://github.com/yourusername/your-monorepo.git
    cd your-monorepo
    ```
 
 2. 为所有包安装依赖：
+
    ```bash
    pnpm install
    ```
@@ -38,11 +40,13 @@
 要向 monorepo 添加新包：
 
 1. 在 `packages/` 文件夹中创建一个新目录：
+
    ```bash
    mkdir -p packages/新包名
    ```
 
 2. 初始化包：
+
    ```bash
    cd packages/新包名
    pnpm init
@@ -60,4 +64,4 @@ pnpm --filter @yourscope/包名 add lodash
 
 # 在特定包中运行脚本
 pnpm --filter @yourscope/包名 build
-``` 
+```

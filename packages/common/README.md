@@ -35,4 +35,4 @@ const longId = generateId(12); // 指定长度为 12
     "@monorepo/common": "^1.0.0"
   }
 }
-``` 
+```

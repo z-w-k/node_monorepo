@@ -2,16 +2,29 @@
   "name": "monorepo-root",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "pnpm -r build",
     "build:common": "pnpm --filter @monorepo/common build",
     "build:api": "pnpm --filter @monorepo/api build",
     "build:todo-http": "pnpm --filter @monorepo/todo-http build",
+    "build:todo-web": "pnpm --filter @monorepo/todo-web build",
     "dev:api": "pnpm --filter @monorepo/api dev",
     "dev:todo-http": "pnpm --filter @monorepo/todo-http dev",
+    "dev:todo-web": "pnpm --filter @monorepo/todo-web dev",
     "start:api": "pnpm --filter @monorepo/api start",
     "start:todo-http": "pnpm --filter @monorepo/todo-http start",
-    "test": "pnpm -r test"
+    "test": "pnpm -r test",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "lint:common": "eslint packages/common/src --ext .ts",
+    "lint:api": "eslint packages/api/src --ext .ts",
+    "lint:todo-http": "eslint packages/todo-http/src --ext .ts",
+    "lint:todo-web": "eslint packages/todo-web/src --ext .ts,.tsx",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md}\"",
+    "prepare": "husky",
+    "pre-commit": "lint-staged"
   },
   "engines": {
     "node": ">=14.0.0",
@@ -22,5 +35,34 @@
     "url": "git+https://github.com/yourusername/your-monorepo.git"
   },
   "author": "",
-  "license": "ISC"
-} 
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
+    "@eslint/js": "^9.25.0",
+    "@types/express": "^4.17.23",
+    "@types/node": "^22.15.31",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "@typescript-eslint/eslint-plugin": "^8.34.0",
+    "@typescript-eslint/parser": "^8.34.0",
+    "@vitejs/plugin-react-swc": "^3.9.0",
+    "eslint": "^9.25.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.2.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.0",
+    "prettier": "^3.5.3",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.30.1",
+    "vite": "^6.3.5"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  }
+}

@@ -2,12 +2,15 @@
   "name": "@monorepo/todo-http",
   "version": "1.0.0",
   "description": "HTTP Todo List Service",
+  "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "dev": "ts-node src/index.ts",
     "build": "tsc",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "lint": "eslint src --ext .ts",
+    "lint:fix": "eslint src --ext .ts --fix"
   },
   "keywords": [],
   "author": "",
@@ -15,9 +18,5 @@
   "dependencies": {
     "@monorepo/common": "workspace:^"
   },
-  "devDependencies": {
-    "@types/node": "^22.15.31",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.8.3"
-  }
+  "devDependencies": {}
 }

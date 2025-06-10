@@ -24,7 +24,6 @@ lerna-debug.log*
 
 # Editor directories and files
 .idea/
-.vscode/
 *.suo
 *.ntvs*
 *.njsproj
@@ -52,7 +51,3 @@ coverage/
 !.yarn/sdks
 !.yarn/versions
 .pnp.*
-
-# Existing git repositories in this directory
-node_http_todoList/
-react_todolist/ 
