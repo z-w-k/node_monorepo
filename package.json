@@ -1,0 +1,26 @@
+{
+  "name": "monorepo-root",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "pnpm -r build",
+    "build:common": "pnpm --filter @monorepo/common build",
+    "build:api": "pnpm --filter @monorepo/api build",
+    "build:todo-http": "pnpm --filter @monorepo/todo-http build",
+    "dev:api": "pnpm --filter @monorepo/api dev",
+    "dev:todo-http": "pnpm --filter @monorepo/todo-http dev",
+    "start:api": "pnpm --filter @monorepo/api start",
+    "start:todo-http": "pnpm --filter @monorepo/todo-http start",
+    "test": "pnpm -r test"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/your-monorepo.git"
+  },
+  "author": "",
+  "license": "ISC"
+} 
